@@ -1,4 +1,4 @@
-package com.alextos.contactsapp.ui.theme
+package com.alextos.contactsapp.core.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle
