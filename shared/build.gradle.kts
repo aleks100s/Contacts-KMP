@@ -92,6 +92,13 @@ android {
     }
 }
 
+sqldelight {
+    database("ContactsDatabase") {
+        packageName = "com.alextos.contactsapp"
+        schemaOutputDirectory = file("src/commonMain/sqldelight/database")
+    }
+}
+
 dependencies {
     implementation("androidx.core:core:1.10.1")
     commonMainApi("dev.icerock.moko:mvvm-core:0.16.1")
