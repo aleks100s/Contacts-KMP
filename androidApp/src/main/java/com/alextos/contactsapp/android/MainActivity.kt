@@ -4,7 +4,9 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.isSystemInDarkTheme
+import androidx.compose.ui.platform.LocalContext
 import com.alextos.contactsapp.App
+import com.alextos.contactsapp.core.di.AppModule
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -12,7 +14,8 @@ class MainActivity : ComponentActivity() {
         setContent {
             App(
                 darkTheme = isSystemInDarkTheme(),
-                dynamicColor = false
+                dynamicColor = false,
+                appModule = AppModule(context = LocalContext.current.applicationContext)
             )
         }
     }

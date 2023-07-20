@@ -1,4 +1,4 @@
-package com.alextos.contactsapp.domain
+package com.alextos.contactsapp.contacts.domain
 
 import kotlinx.coroutines.flow.Flow
 

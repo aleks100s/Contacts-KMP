@@ -1,6 +1,6 @@
-package com.alextos.contactsapp.presentation.contact_list
+package com.alextos.contactsapp.contacts.presentation.contact_list
 
-import com.alextos.contactsapp.domain.Contact
+import com.alextos.contactsapp.contacts.domain.Contact
 
 sealed interface ContactListEvent {
     object OnAddNewContactTapped: ContactListEvent

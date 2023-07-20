@@ -8,15 +8,17 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import com.alextos.contactsapp.core.theme.ContactsTheme
-import com.alextos.contactsapp.presentation.contact_list.ContactListScreen
-import com.alextos.contactsapp.presentation.contact_list.ContactListViewModel
+import com.alextos.contactsapp.contacts.presentation.contact_list.ContactListScreen
+import com.alextos.contactsapp.contacts.presentation.contact_list.ContactListViewModel
+import com.alextos.contactsapp.core.di.AppModule
 import dev.icerock.moko.mvvm.compose.getViewModel
 import dev.icerock.moko.mvvm.compose.viewModelFactory
 
 @Composable
 fun App(
     darkTheme: Boolean,
-    dynamicColor: Boolean
+    dynamicColor: Boolean,
+    appModule: AppModule
 ) {
     ContactsTheme(
         darkTheme = darkTheme,
@@ -25,7 +27,7 @@ fun App(
         val viewModel = getViewModel(
             key = "contact-list-screen",
             factory = viewModelFactory {
-                ContactListViewModel()
+                ContactListViewModel(appModule.contactsDataSource)
             }
         )
         val state by viewModel.state.collectAsState()

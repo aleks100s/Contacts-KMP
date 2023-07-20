@@ -1,4 +1,4 @@
-package com.alextos.contactsapp.domain
+package com.alextos.contactsapp.contacts.domain
 
 data class Contact(
     val id: Long?,

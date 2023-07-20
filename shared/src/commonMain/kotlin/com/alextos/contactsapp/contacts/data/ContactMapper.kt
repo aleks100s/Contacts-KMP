@@ -1,6 +1,6 @@
-package com.alextos.contactsapp.data
+package com.alextos.contactsapp.contacts.data
 
-import com.alextos.contactsapp.domain.Contact
+import com.alextos.contactsapp.contacts.domain.Contact
 import database.ContactEntity
 
 fun List<ContactEntity>.toContacts(): List<Contact> {

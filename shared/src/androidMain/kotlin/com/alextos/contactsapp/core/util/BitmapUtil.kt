@@ -1,4 +1,4 @@
-package com.alextos.contactsapp.core
+package com.alextos.contactsapp.core.util
 
 import android.graphics.BitmapFactory
 import androidx.compose.runtime.Composable

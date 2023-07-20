@@ -1,8 +1,8 @@
-package com.alextos.contactsapp.data
+package com.alextos.contactsapp.contacts.data
 
 import com.alextos.contactsapp.ContactsDatabase
-import com.alextos.contactsapp.domain.Contact
-import com.alextos.contactsapp.domain.ContactsDataSource
+import com.alextos.contactsapp.contacts.domain.Contact
+import com.alextos.contactsapp.contacts.domain.ContactsDataSource
 import com.squareup.sqldelight.runtime.coroutines.asFlow
 import com.squareup.sqldelight.runtime.coroutines.mapToList
 import kotlinx.coroutines.flow.Flow
@@ -32,7 +32,7 @@ class SqlDelightContactsDataSource(
         val timestamp = Clock.System.now().toEpochMilliseconds()
         database.contactsQueries
             .insertContactEntity(
-                id = null,
+                id = contact.id,
                 firstName = contact.firstName,
                 lastName = contact.lastName,
                 email = contact.email,

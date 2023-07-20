@@ -1,4 +1,4 @@
-package com.alextos.contactsapp.presentation.components
+package com.alextos.contactsapp.contacts.presentation.components
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -16,8 +16,8 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import com.alextos.contactsapp.domain.Contact
-import com.alextos.contactsapp.core.rememberBitmapFromBytes
+import com.alextos.contactsapp.contacts.domain.Contact
+import com.alextos.contactsapp.core.util.rememberBitmapFromBytes
 
 @Composable
 fun ContactPhoto(

@@ -1,4 +1,4 @@
-package com.alextos.contactsapp.presentation.contact_list
+package com.alextos.contactsapp.contacts.presentation.contact_list
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.PaddingValues
@@ -19,8 +19,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import com.alextos.contactsapp.domain.Contact
-import com.alextos.contactsapp.presentation.components.ContactListItem
+import com.alextos.contactsapp.contacts.domain.Contact
+import com.alextos.contactsapp.contacts.presentation.components.ContactListItem
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

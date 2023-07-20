@@ -1,7 +1,8 @@
-package com.alextos.contactsapp.core
+package com.alextos.contactsapp.core.util
 
 import androidx.compose.ui.window.ComposeUIViewController
 import com.alextos.contactsapp.App
+import com.alextos.contactsapp.core.di.AppModule
 import platform.UIKit.UIScreen
 import platform.UIKit.UIUserInterfaceStyle
 
@@ -9,6 +10,7 @@ fun MainViewController() = ComposeUIViewController {
     val isDarkMode = UIScreen.mainScreen.traitCollection.userInterfaceStyle == UIUserInterfaceStyle.UIUserInterfaceStyleDark
     App(
         darkTheme = isDarkMode,
-        dynamicColor = false
+        dynamicColor = false,
+        appModule = AppModule()
     )
 }
