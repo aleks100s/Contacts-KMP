@@ -7,6 +7,7 @@ import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.ui.platform.LocalContext
 import com.alextos.contactsapp.App
 import com.alextos.contactsapp.core.di.AppModule
+import com.alextos.contactsapp.core.presentation.ImagePickerFactory
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -15,7 +16,8 @@ class MainActivity : ComponentActivity() {
             App(
                 darkTheme = isSystemInDarkTheme(),
                 dynamicColor = false,
-                appModule = AppModule(context = LocalContext.current.applicationContext)
+                appModule = AppModule(context = LocalContext.current.applicationContext),
+                imagePicker = ImagePickerFactory().createPicker()
             )
         }
     }

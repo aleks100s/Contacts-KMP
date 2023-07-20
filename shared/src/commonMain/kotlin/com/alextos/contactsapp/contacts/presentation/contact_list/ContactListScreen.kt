@@ -20,15 +20,21 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.alextos.contactsapp.contacts.domain.Contact
+import com.alextos.contactsapp.contacts.presentation.components.AddContactSheet
 import com.alextos.contactsapp.contacts.presentation.components.ContactListItem
+import com.alextos.contactsapp.core.presentation.ImagePicker
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ContactListScreen(
     state: ContactListState,
     newContact: Contact?,
-    onEvent: (ContactListEvent) -> Unit
+    onEvent: (ContactListEvent) -> Unit,
+    imagePicker: ImagePicker
 ) {
+    imagePicker.registerPicker { imageBytes ->
+        onEvent(ContactListEvent.OnPhotoPicked(imageBytes))
+    }
     Scaffold(
         floatingActionButton = {
             FloatingActionButton(
@@ -65,6 +71,18 @@ fun ContactListScreen(
             }
         }
     }
+
+    AddContactSheet(
+        state = state,
+        newContact = newContact,
+        isOpened = state.isAddContactSheetOpened,
+        onEvent = { event ->
+            if (event is ContactListEvent.OnAddPhotoTapped) {
+                imagePicker.pickImage()
+            }
+            onEvent(event)
+        }
+    )
 }
 
 @Composable

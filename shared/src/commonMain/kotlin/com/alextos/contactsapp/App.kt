@@ -11,6 +11,7 @@ import com.alextos.contactsapp.core.theme.ContactsTheme
 import com.alextos.contactsapp.contacts.presentation.contact_list.ContactListScreen
 import com.alextos.contactsapp.contacts.presentation.contact_list.ContactListViewModel
 import com.alextos.contactsapp.core.di.AppModule
+import com.alextos.contactsapp.core.presentation.ImagePicker
 import dev.icerock.moko.mvvm.compose.getViewModel
 import dev.icerock.moko.mvvm.compose.viewModelFactory
 
@@ -18,7 +19,8 @@ import dev.icerock.moko.mvvm.compose.viewModelFactory
 fun App(
     darkTheme: Boolean,
     dynamicColor: Boolean,
-    appModule: AppModule
+    appModule: AppModule,
+    imagePicker: ImagePicker
 ) {
     ContactsTheme(
         darkTheme = darkTheme,
@@ -38,7 +40,8 @@ fun App(
             ContactListScreen(
                 state = state,
                 newContact = viewModel.newContact,
-                onEvent = viewModel::onEvent
+                onEvent = viewModel::onEvent,
+                imagePicker = imagePicker
             )
         }
     }
