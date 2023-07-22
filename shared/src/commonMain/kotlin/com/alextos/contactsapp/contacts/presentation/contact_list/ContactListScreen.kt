@@ -21,6 +21,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.alextos.contactsapp.contacts.domain.Contact
 import com.alextos.contactsapp.contacts.presentation.components.AddContactSheet
+import com.alextos.contactsapp.contacts.presentation.components.ContactDetailSheet
 import com.alextos.contactsapp.contacts.presentation.components.ContactListItem
 import com.alextos.contactsapp.core.presentation.ImagePicker
 
@@ -82,6 +83,12 @@ fun ContactListScreen(
             }
             onEvent(event)
         }
+    )
+
+    ContactDetailSheet(
+        isOpened = state.isSelectedContactSheetOpened,
+        contact = state.selectedContact,
+        onEvent = onEvent
     )
 }
 
