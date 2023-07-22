@@ -23,6 +23,7 @@ import com.alextos.contactsapp.contacts.domain.Contact
 import com.alextos.contactsapp.contacts.presentation.components.AddContactSheet
 import com.alextos.contactsapp.contacts.presentation.components.ContactDetailSheet
 import com.alextos.contactsapp.contacts.presentation.components.ContactListItem
+import com.alextos.contactsapp.contacts.presentation.components.RecentlyAddedContacts
 import com.alextos.contactsapp.core.presentation.ImagePicker
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -55,6 +56,12 @@ fun ContactListScreen(
             modifier = Modifier.fillMaxSize().padding(it),
             contentPadding = PaddingValues(vertical = 16.dp)
         ) {
+            item {
+                RecentlyAddedContacts(contacts = state.recentlyAddedContacts) { contact ->
+                    onEvent(ContactListEvent.SelectContact(contact))
+                }
+            }
+
             item {
                 ContactListHeader(state.contacts)
             }
